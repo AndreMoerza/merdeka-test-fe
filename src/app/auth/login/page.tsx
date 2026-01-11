@@ -39,7 +39,7 @@ function AuthAdminPage() {
       email: data.email,
       password: data.password,
       deviceInfo: JSON.stringify(data.deviceInfo),
-      callbackUrl: "/dashboard",
+      callbackUrl: "/dashboard/master/karyawan",
       redirect: true,
     });
     setLoading(false);

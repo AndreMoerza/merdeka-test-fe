@@ -6,7 +6,6 @@ import { AppHeading } from "@/components/base/app-heading";
 import { toast } from "@/components/ui/use-toast";
 import { useKaryawanApi } from "@/lib/apis/employee/employee-hook";
 import { safePromise } from "@/lib/utils";
-import { formatThousandSeparator } from "@/lib/utils/money";
 import { formatDate, getClockTime } from "@/lib/utils/time";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import { Import, Plus, RefreshCw } from "lucide-react";
@@ -26,6 +25,16 @@ export default function KaryawanPage() {
   const onRefresh = () => {
     fetcher?.refetch();
   };
+
+  const formatSalary = (value: number | string) => {
+    if (value === null || value === undefined) return "-";
+
+    return new Intl.NumberFormat("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(Number(value));
+  };
+
 
   return (
     <div className="space-y-6">
@@ -54,11 +63,15 @@ export default function KaryawanPage() {
           {
             accessorKey: "salary",
             header: "Gaji",
-            cell: ({ row }) => (
-              <div className="flex flex-col items-start space-y-2">
-                <p className="text-sm">{formatThousandSeparator(row.original?.salary.toLocaleString('id-ID'))}</p>
-              </div>
-            ),
+            cell: ({ row }) => {
+              const salary = row.original?.salary;
+
+              return (
+                <div className="flex flex-col items-start space-y-2">
+                  <p className="text-sm">{formatSalary(salary)}</p>
+                </div>
+              );
+            },
           },
           {
             accessorKey: "createdAt",

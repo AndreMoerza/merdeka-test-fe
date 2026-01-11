@@ -1,8 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Frontend – Next.js Application
 
-## Getting Started
+This is a **Next.js 14** application bootstrapped with  
+[`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-First, run the development server:
+The app is built using:
+- ⚛️ React + Next.js (App Router)
+- 🎨 Tailwind / MUI (depending on your setup)
+- 🔐 Auth flow (login API backend integration)
+
+---
+
+## 🧰 Prerequisites
+
+Before running the project, ensure you have installed:
+- Node.js (v18+ recommended)
+- npm / yarn / pnpm / bun
+- Backend API running (see backend README)
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Install dependencies
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+### 2️⃣ Environment Variables
+
+Create `.env.local` based on `.env.example` (if provided)
+Typical values:
+```
+NEXT_PUBLIC_API_BASE_URL=http://localhost:3000
+AUTH_REDIRECT=/dashboard
+```
+
+---
+
+## ▶️ Run the development server
 
 ```bash
 npm run dev
@@ -14,23 +55,61 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser at:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+👉 **http://localhost:3001**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project will auto-refresh when you edit files.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🧪 Login Test (Required)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+After running the backend & frontend:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Visit **/login**
+  <img width="1084" height="648" alt="image" src="https://github.com/user-attachments/assets/c863a99a-6a5f-461a-a9cf-79ab660d8b45" />
+2. Enter credentials (email: merdeka@mail.com & password: test1234) and You should be redirected to employee page
+   <img width="1899" height="879" alt="image" src="https://github.com/user-attachments/assets/967b8814-e42b-413d-be90-b559d4012cf8" />
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📚 Learn More
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Docs → https://nextjs.org/docs
+- Interactive Tutorial → https://nextjs.org/learn
+- GitHub → https://github.com/vercel/next.js
+
+---
+
+## ☁️ Deployment
+
+Deploy easily via **Vercel**:
+
+👉 https://vercel.com/new?utm_source=create-next-app
+
+Or follow Next.js deploy docs:
+
+👉 https://nextjs.org/docs/app/building-your-application/deploying
+
+---
+
+## 👨‍💻 Contribution
+
+1. Create a feature branch  
+2. Commit with meaningful messages  
+3. Submit a pull request 🎉
+
+---
+
+## 📸 Required Screenshots ☑
+
+| Feature | Screenshot Required |
+|--------|---------------------|
+| Login Success | ✅ Upload screenshot |
+| Employee CRUD (Add/Edit/Delete) | ✅ Upload screenshot |
+
+---
+
+## 📜 License
+MIT — free for personal and commercial use.
